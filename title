@@ -1,0 +1,18 @@
+void title(void);
+
+title();
+
+void title(void)
+{			
+	
+	while(1)
+	{
+		LCD_CMD(0x80);
+		LCD_STRING("BLUETOOTH USING SMART NOTICE BOARD");
+		LCD_CMD(0x18);
+		delay_ms(50);
+	}
+}
+
+
+
