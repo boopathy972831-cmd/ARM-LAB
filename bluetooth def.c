@@ -60,12 +60,24 @@ void LCD_STRING(unsigned char*s)
 while(*s)
 LCD_DATA(*s++);
 }
+void title(void)
+{			
+	int j=0;
+	while(j<35)
+	{		LCD_CMD(0x80);
+		LCD_STRING("BLUETOOTH USING SMART NOTICE BOARD");
+			LCD_CMD(0x18);
+		j++;
+		delay_ms(150);
+}}
+
+
 void LED_BLINK(void)
 {
 	IODIR0=led;
 	while(1)
 	{
-		if(((IOPIN0>>2)&1)==0)
+		if(((IOPIN0>>2)&1)==1)
 		{
 			IOCLR0=led;
 		}
